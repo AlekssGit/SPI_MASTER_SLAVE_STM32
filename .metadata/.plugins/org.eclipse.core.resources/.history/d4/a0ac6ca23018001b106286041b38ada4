@@ -1,0 +1,15 @@
+/*
+ * spi_drive.h
+ *
+ *  Created on: 27 окт. 2020 г.
+ *      Author: admin
+ */
+
+#ifndef SPI_DRIVE_H_
+#define SPI_DRIVE_H_
+
+#include "stm32f1xx_hal.h"
+
+void spi_read(uint8_t adr, uint8_t numbers);
+
+#endif /* SPI_DRIVE_H_ */

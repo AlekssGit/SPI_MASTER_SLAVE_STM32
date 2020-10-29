@@ -1,0 +1,5 @@
+spi_drive_master.c:11:6:delay_us	24	static
+spi_drive_master.c:17:6:spi_read	16	static
+spi_drive_master.c:22:6:SET_CS	4	static
+spi_drive_master.c:30:6:CLR_CS	4	static
+spi_drive_master.c:35:6:spi_write	40	static

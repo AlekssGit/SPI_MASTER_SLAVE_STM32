@@ -1,0 +1,29 @@
+/*
+ * spi_drive.c
+ *
+ *  Created on: 27 окт. 2020 г.
+ *      Author: admin
+ */
+
+#include "spi_drive.h"
+#include "crc.h"
+
+void spi_read(uint8_t adr, uint8_t numbers)
+{
+
+}
+
+
+void spi_write(uint8_t adr_reg, uint16_t val)
+{
+	uint8_t data[3];
+	msg_write.start.all = adr_reg;
+	msg_write.start.bits.bit0 = 1;
+	data[1] = msg_write.dataHi.all = val >> 8;
+	data[2] = msg_write.dataLow.all = val & 0xff;
+
+	data[0] = msg_write.start.all;
+
+	uint16_t crc = crc_rtu_calc(&data, 3);
+
+}
