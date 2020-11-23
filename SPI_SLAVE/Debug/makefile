@@ -15,12 +15,6 @@ RM := rm -rf
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
-ifneq ($(strip $(S_DEPS)),)
--include $(S_DEPS)
-endif
-ifneq ($(strip $(S_UPPER_DEPS)),)
--include $(S_UPPER_DEPS)
-endif
 ifneq ($(strip $(C_DEPS)),)
 -include $(C_DEPS)
 endif
@@ -46,8 +40,8 @@ SPI_SLAVE.bin \
 all: SPI_SLAVE.elf secondary-outputs
 
 # Tool invocations
-SPI_SLAVE.elf: $(OBJS) $(USER_OBJS) C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld
-	arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+SPI_SLAVE.elf: $(OBJS) $(USER_OBJS) C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld
+	arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

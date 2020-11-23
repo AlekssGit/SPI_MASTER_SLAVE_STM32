@@ -1,53 +1,26 @@
-16:23:37 **** Incremental Build of configuration Debug for project SPI_Master ****
+17:29:51 **** Incremental Build of configuration Debug for project SPI_Master ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/spi_drive_master.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive_master.d" -MT"Src/spi_drive_master.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive_master.o"
-In file included from ../Src/spi_drive_master.c:8:0:
-../Src/spi_drive_master.c: In function 'spi_write':
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 10);
-                                                      ^
-../Src/spi_drive_master.c:52:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.start.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 10);
-                                                      ^
-../Src/spi_drive_master.c:55:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 10);
-                                                      ^
-../Src/spi_drive_master.c:58:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataLow.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 10);
-                                                      ^
-../Src/spi_drive_master.c:61:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 10);
-                                                      ^
-../Src/spi_drive_master.c:64:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcLow.all);
-  ^~~~~~~~~~~~~~
-../Src/spi_drive_master.c:73:15: warning: comparison between pointer and integer
-  if(spiRecBuf == 0b10011011)
-               ^~
-../Src/spi_drive_master.c:71:6: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  int test;
-      ^~~~
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+../Src/main.c: In function 'main':
+../Src/main.c:122:4: warning: implicit declaration of function 'SET_CS'; did you mean 'SET_BIT'? [-Wimplicit-function-declaration]
+    SET_CS();
+    ^~~~~~
+    SET_BIT
+../Src/main.c:128:4: warning: implicit declaration of function 'CLR_CS'; did you mean 'CRC'? [-Wimplicit-function-declaration]
+    CLR_CS();
+    ^~~~~~
+    CRC
+../Src/main.c:102:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: SPI_Master.elf
  
 arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
 arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
 arm-none-eabi-size   SPI_Master.elf 
    text	   data	    bss	    dec	    hex	filename
-   8292	     20	   1732	  10044	   273c	SPI_Master.elf
+   8360	     20	   1732	  10112	   2780	SPI_Master.elf
 Finished building: default.size.stdout
  
 Finished building: SPI_Master.bin
@@ -55,5 +28,5 @@ Finished building: SPI_Master.bin
 Finished building: SPI_Master.list
  
 
-16:23:38 Build Finished. 0 errors, 7 warnings. (took 803ms)
+17:29:52 Build Finished. 0 errors, 3 warnings. (took 1s.250ms)
 

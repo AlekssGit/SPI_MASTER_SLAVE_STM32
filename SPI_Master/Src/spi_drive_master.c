@@ -34,47 +34,51 @@ void CLR_CS()
 
 void spi_write(uint8_t adr_reg, uint16_t val)
 {
-	uint8_t data[3];
-	msg_write.start.all = adr_reg;
-	msg_write.start.bits.bit0 = 1;
-	data[1] = msg_write.dataHi.all = val >> 8;
-	data[2] = msg_write.dataLow.all = val & 0xff;
-
-	data[0] = msg_write.start.all;
-
-	int crc = crc_calc(data, 3);
-
-	msg_write.crcHi.all = crc >> 8;
-	msg_write.crcLow.all = crc & 0xff;
+//	uint8_t data[3];
+//	msg_write.start.all = adr_reg;
+//	msg_write.start.bits.bit0 = 1;
+//	data[1] = msg_write.dataHi.all = val >> 8;
+//	data[2] = msg_write.dataLow.all = val & 0xff;
+//
+//	data[0] = msg_write.start.all;
+//
+//	int crc = crc_calc(data, 3);
+//
+//	msg_write.crcHi.all = crc >> 8;
+//	msg_write.crcLow.all = crc & 0xff;
+//
+//	SET_CS();
+//
+//	SPI_SEND_8_BIT(msg_write.start.all);
+//	delay_us(20);
+//
+//	SPI_SEND_8_BIT(msg_write.dataHi.all);
+//	delay_us(20);
+//
+//	SPI_SEND_8_BIT(msg_write.dataLow.all);
+//	delay_us(20);
+//
+//	SPI_SEND_8_BIT(msg_write.crcHi.all);
+//	delay_us(20);
+//
+//	SPI_SEND_8_BIT(msg_write.crcLow.all);
+//	delay_us(20);
+//
+//	SPI_RECEIVE_8_BIT;
+//
+//	CLR_CS();
+//
+//	int test;
+//
+//	if(spiRecBuf == 0b10011011)
+//	{
+//		test = 10;
+//	}
+//	else
+//		test = 5;
 
 	SET_CS();
-
-	SPI_SEND_8_BIT(msg_write.start.all);
+	SPI_SEND_8_BIT(adr_reg);
 	delay_us(20);
-
-	SPI_SEND_8_BIT(msg_write.dataHi.all);
-	delay_us(20);
-
-	SPI_SEND_8_BIT(msg_write.dataLow.all);
-	delay_us(20);
-
-	SPI_SEND_8_BIT(msg_write.crcHi.all);
-	delay_us(20);
-
-	SPI_SEND_8_BIT(msg_write.crcLow.all);
-	delay_us(20);
-
-	SPI_RECEIVE_8_BIT;
-
 	CLR_CS();
-
-	int test;
-
-	if(spiRecBuf == 0b10011011)
-	{
-		test = 10;
-	}
-	else
-		test = 5;
-
 }

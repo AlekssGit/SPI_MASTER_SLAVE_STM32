@@ -1,925 +1,14 @@
-11:33:28 **** Build of configuration Debug for project SPI_Master ****
+14:37:54 **** Build of configuration Debug for project SPI_Master ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c8tx.d" -MT"Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c8tx.o" "../Startup/startup_stm32f103c8tx.s"
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c8tx.o" "../Startup/startup_stm32f103c8tx.s"
+arm-none-eabi-gcc "../Src/crc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/crc.d" -MT"Src/crc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/crc.o"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/spi_drive.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive.d" -MT"Src/spi_drive.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive.o"
+arm-none-eabi-gcc "../Src/spi_drive_master.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive_master.d" -MT"Src/spi_drive_master.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive_master.o"
 arm-none-eabi-gcc "../Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_hal_msp.d" -MT"Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_hal_msp.o"
 arm-none-eabi-gcc "../Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_it.d" -MT"Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_it.o"
 arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
 arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
 arm-none-eabi-gcc "../Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/system_stm32f1xx.d" -MT"Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/system_stm32f1xx.o"
-In file included from ../Src/spi_drive.c:8:0:
-../Inc/spi_drive.h:11:15: error: unknown type name 'uint8_t'
- void spi_read(uint8_t adr, uint8_t numbers);
-               ^~~~~~~
-../Inc/spi_drive.h:11:28: error: unknown type name 'uint8_t'
- void spi_read(uint8_t adr, uint8_t numbers);
-                            ^~~~~~~
-../Src/spi_drive.c:10:15: error: unknown type name 'uint8_t'
- void spi_read(uint8_t adr, uint8_t numbers)
-               ^~~~~~~
-../Src/spi_drive.c:10:28: error: unknown type name 'uint8_t'
- void spi_read(uint8_t adr, uint8_t numbers)
-                            ^~~~~~~
-make: *** [Src/subdir.mk:38: Src/spi_drive.o] Error 1
-make: *** Waiting for unfinished jobs....
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-11:33:48 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/spi_drive.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive.d" -MT"Src/spi_drive.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-size   SPI_Master.elf 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-   text	   data	    bss	    dec	    hex	filename
-   5648	     20	   1724	   7392	   1ce0	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.list
- 
-Finished building: SPI_Master.bin
- 
-14:32:38 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/spi_drive.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive.d" -MT"Src/spi_drive.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive.o"
-In file included from ../Src/spi_drive.c:8:0:
-../Inc/spi_drive.h:15:32: error: macro parameters must be comma-separated
- #define SPI_SEND_8_BIT(uint8_t val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                ^~~
-make: *** [Src/subdir.mk:38: Src/spi_drive.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-14:33:01 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/spi_drive.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive.d" -MT"Src/spi_drive.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive.o"
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5648	     20	   1724	   7392	   1ce0	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-14:36:56 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/spi_drive.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive.d" -MT"Src/spi_drive.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive.o"
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5648	     20	   1724	   7392	   1ce0	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-14:41:45 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/spi_drive.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive.d" -MT"Src/spi_drive.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive.o"
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5648	     20	   1724	   7392	   1ce0	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-14:47:36 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/crc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/crc.d" -MT"Src/crc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/crc.o"
-arm-none-eabi-gcc "../Src/spi_drive.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive.d" -MT"Src/spi_drive.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive.o"
-../Src/spi_drive.c: In function 'spi_write':
-../Src/spi_drive.c:27:30: warning: passing argument 1 of 'crc_rtu_calc' from incompatible pointer type [-Wincompatible-pointer-types]
-  uint16_t crc = crc_rtu_calc(&data, 3);
-                              ^
-In file included from ../Src/spi_drive.c:9:0:
-../Inc/crc.h:2:5: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
- int crc_rtu_calc(uint8_t *msg, uint8_t length);
-     ^~~~~~~~~~~~
-../Src/spi_drive.c:27:11: warning: unused variable 'crc' [-Wunused-variable]
-  uint16_t crc = crc_rtu_calc(&data, 3);
-           ^~~
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5648	     20	   1724	   7392	   1ce0	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-14:48:30 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/spi_drive.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive.d" -MT"Src/spi_drive.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive.o"
-../Src/spi_drive.c: In function 'spi_write':
-../Src/spi_drive.c:27:25: warning: passing argument 1 of 'crc_rtu_calc' from incompatible pointer type [-Wincompatible-pointer-types]
-  int crc = crc_rtu_calc(&data, 3);
-                         ^
-In file included from ../Src/spi_drive.c:9:0:
-../Inc/crc.h:2:5: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
- int crc_rtu_calc(uint8_t *msg, uint8_t length);
-     ^~~~~~~~~~~~
-../Src/spi_drive.c:29:18: error: incompatible types when assigning to type 'byte {aka union <anonymous>}' from type 'int'
-  msg_write.crcHi = crc >> 8;
-                  ^
-../Src/spi_drive.c:30:19: error: incompatible types when assigning to type 'byte {aka union <anonymous>}' from type 'int'
-  msg_write.crcLow = crc & 0xff;
-                   ^
-make: *** [Src/subdir.mk:43: Src/spi_drive.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-14:48:47 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/spi_drive.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive.d" -MT"Src/spi_drive.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive.o"
-../Src/spi_drive.c: In function 'spi_write':
-../Src/spi_drive.c:27:25: warning: passing argument 1 of 'crc_rtu_calc' from incompatible pointer type [-Wincompatible-pointer-types]
-  int crc = crc_rtu_calc(&data, 3);
-                         ^
-In file included from ../Src/spi_drive.c:9:0:
-../Inc/crc.h:2:5: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
- int crc_rtu_calc(uint8_t *msg, uint8_t length);
-     ^~~~~~~~~~~~
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5648	     20	   1724	   7392	   1ce0	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-14:49:00 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/spi_drive.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive.d" -MT"Src/spi_drive.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive.o"
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5648	     20	   1724	   7392	   1ce0	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-14:50:01 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/crc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/crc.d" -MT"Src/crc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/crc.o"
-arm-none-eabi-gcc "../Src/spi_drive.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive.d" -MT"Src/spi_drive.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive.o"
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5648	     20	   1724	   7392	   1ce0	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-14:54:50 **** Clean-only build of configuration Debug for project SPI_Master ****
-make -j8 clean 
-rm -rf *
- 
-14:54:50 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c8tx.d" -MT"Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c8tx.o" "../Startup/startup_stm32f103c8tx.s"
-arm-none-eabi-gcc "../Src/crc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/crc.d" -MT"Src/crc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/crc.o"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/spi_drive.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive.d" -MT"Src/spi_drive.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive.o"
-arm-none-eabi-gcc "../Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_hal_msp.d" -MT"Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_hal_msp.o"
-arm-none-eabi-gcc "../Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_it.d" -MT"Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_it.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc "../Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/system_stm32f1xx.d" -MT"Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/system_stm32f1xx.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-size   SPI_Master.elf 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-   text	   data	    bss	    dec	    hex	filename
-   5820	     20	   1724	   7564	   1d8c	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-15:33:23 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/spi_drive_master.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive_master.d" -MT"Src/spi_drive_master.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive_master.o"
-In file included from ../Src/spi_drive_master.c:8:0:
-../Src/spi_drive_master.c: In function 'spi_write':
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:40:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.start.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:43:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:46:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataLow.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:49:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:52:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcLow.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:20:85: error: 'spiBuf' undeclared (first use in this function); did you mean 'spiRecBuf'?
- #define SPI_RECEIVE_8_BIT  HAL_SPI_TransmitReceive(&hspi1, (uint8_t*) 1, (uint8_t *)spiBuf, 1, 5);
-                                                                                     ^
-../Src/spi_drive_master.c:55:2: note: in expansion of macro 'SPI_RECEIVE_8_BIT'
-  SPI_RECEIVE_8_BIT;
-  ^~~~~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:20:85: note: each undeclared identifier is reported only once for each function it appears in
- #define SPI_RECEIVE_8_BIT  HAL_SPI_TransmitReceive(&hspi1, (uint8_t*) 1, (uint8_t *)spiBuf, 1, 5);
-                                                                                     ^
-../Src/spi_drive_master.c:55:2: note: in expansion of macro 'SPI_RECEIVE_8_BIT'
-  SPI_RECEIVE_8_BIT;
-  ^~~~~~~~~~~~~~~~~
-../Src/spi_drive_master.c:61:15: warning: comparison between pointer and integer
-  if(spiRecBuf == 0b10011011)
-               ^~
-../Src/spi_drive_master.c:59:6: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  int test;
-      ^~~~
-make: *** [Src/subdir.mk:43: Src/spi_drive_master.o] Error 1
-make: *** Waiting for unfinished jobs....
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-15:33:58 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/spi_drive_master.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive_master.d" -MT"Src/spi_drive_master.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive_master.o"
-In file included from ../Src/spi_drive_master.c:8:0:
-../Src/spi_drive_master.c: In function 'spi_write':
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:40:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.start.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:43:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:46:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataLow.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:49:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:52:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcLow.all);
-  ^~~~~~~~~~~~~~
-../Src/spi_drive_master.c:61:15: warning: comparison between pointer and integer
-  if(spiRecBuf == 0b10011011)
-               ^~
-../Src/spi_drive_master.c:59:6: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  int test;
-      ^~~~
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8180	     20	   1732	   9932	   26cc	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-15:35:03 **** Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c8tx.d" -MT"Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c8tx.o" "../Startup/startup_stm32f103c8tx.s"
-arm-none-eabi-gcc "../Src/crc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/crc.d" -MT"Src/crc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/crc.o"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/spi_drive_slave.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive_slave.d" -MT"Src/spi_drive_slave.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive_slave.o"
-arm-none-eabi-gcc "../Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_hal_msp.d" -MT"Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_hal_msp.o"
-arm-none-eabi-gcc "../Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_it.d" -MT"Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_it.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc "../Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/system_stm32f1xx.d" -MT"Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/system_stm32f1xx.o"
-In file included from ../Src/spi_drive_slave.c:8:0:
-../Src/spi_drive_slave.c: In function 'spi_write':
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:39:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.start.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:42:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:45:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataLow.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:48:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:51:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcLow.all);
-  ^~~~~~~~~~~~~~
-../Src/spi_drive_slave.c:57:6: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  int test;
-      ^~~~
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_SLAVE.elf
- 
-arm-none-eabi-size   SPI_SLAVE.elf 
-arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
-arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-   text	   data	    bss	    dec	    hex	filename
-   5752	     20	   1724	   7496	   1d48	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_SLAVE.bin
- 
-Finished building: SPI_SLAVE.list
- 
-15:35:11 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5752	     20	   1724	   7496	   1d48	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-15:35:48 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:106:9: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-     int test;
-         ^~~~
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_SLAVE.elf
- 
-arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
-arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5764	     20	   1724	   7508	   1d54	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_SLAVE.bin
- 
-Finished building: SPI_SLAVE.list
- 
-15:56:10 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8180	     20	   1732	   9932	   26cc	SPI_Master.elf
-Finished building: default.size.stdout
- 
-15:56:11 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:108:9: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-     int test;
-         ^~~~
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_SLAVE.elf
- 
-arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
-arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7660	     20	   1724	   9404	   24bc	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_SLAVE.list
-Finished building: SPI_SLAVE.bin
- 
- 
-15:56:28 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:108:9: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-     int test;
-         ^~~~
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_SLAVE.elf
- 
-arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
-arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7664	     20	   1724	   9408	   24c0	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_SLAVE.bin
- 
-Finished building: SPI_SLAVE.list
- 
-15:57:22 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:108:9: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-     int test;
-         ^~~~
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_SLAVE.elf
- 
-arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
-arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7664	     20	   1724	   9408	   24c0	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_SLAVE.bin
- 
-Finished building: SPI_SLAVE.list
- 
-15:58:20 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7664	     20	   1724	   9408	   24c0	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-16:02:21 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:108:4: error: 'CS' undeclared (first use in this function)
-    CS = HAL_GPIO_ReadPin(SPI_CS_GPIO_Port, SPI_CS_Pin);
-    ^~
-../Src/main.c:108:4: note: each undeclared identifier is reported only once for each function it appears in
-../Src/main.c:111:9: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-     int test;
-         ^~~~
-../Src/main.c:99:11: warning: unused variable 'test_CS' [-Wunused-variable]
-   uint8_t test_CS;
-           ^~~~~~~
-make: *** [Src/subdir.mk:41: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-16:02:37 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:109:8: error: 'CS' undeclared (first use in this function)
-    if( CS == 1)
-        ^~
-../Src/main.c:109:8: note: each undeclared identifier is reported only once for each function it appears in
-../Src/main.c:111:9: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-     int test;
-         ^~~~
-../Src/main.c:99:11: warning: variable 'test_CS' set but not used [-Wunused-but-set-variable]
-   uint8_t test_CS;
-           ^~~~~~~
-make: *** [Src/subdir.mk:41: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-16:02:50 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:111:9: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-     int test;
-         ^~~~
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_SLAVE.elf
- 
-arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
-arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7668	     20	   1724	   9412	   24c4	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_SLAVE.bin
- 
-Finished building: SPI_SLAVE.list
- 
-16:03:05 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7668	     20	   1724	   9412	   24c4	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-16:06:46 **** Clean-only build of configuration Debug for project SPI_SLAVE ****
-make -j8 clean 
-rm -rf *
- 
-16:06:46 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c8tx.d" -MT"Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c8tx.o" "../Startup/startup_stm32f103c8tx.s"
-arm-none-eabi-gcc "../Src/crc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/crc.d" -MT"Src/crc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/crc.o"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/spi_drive_slave.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive_slave.d" -MT"Src/spi_drive_slave.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive_slave.o"
-arm-none-eabi-gcc "../Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_hal_msp.d" -MT"Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_hal_msp.o"
-arm-none-eabi-gcc "../Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_it.d" -MT"Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_it.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc "../Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/system_stm32f1xx.d" -MT"Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/system_stm32f1xx.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
-../Src/main.c: In function 'main':
-../Src/main.c:111:4: warning: implicit declaration of function 'HAL_delay'; did you mean 'HAL_Delay'? [-Wimplicit-function-declaration]
-    HAL_delay(500);
-    ^~~~~~~~~
-    HAL_Delay
-../Src/main.c:99:11: warning: unused variable 'test_CS' [-Wunused-variable]
-   uint8_t test_CS;
-           ^~~~~~~
-../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
-   uint8_t spiRecBuf[10];
-           ^~~~~~~~~
-In file included from ../Src/spi_drive_slave.c:8:0:
-../Src/spi_drive_slave.c: In function 'spi_write':
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:39:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.start.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:42:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:45:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataLow.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:48:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:51:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcLow.all);
-  ^~~~~~~~~~~~~~
-../Src/spi_drive_slave.c:57:6: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  int test;
-      ^~~~
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Src/main.o: In function `main':
-C:/Sasha/STM32/SPI_Master_Slave/SPI_SLAVE/Debug/../Src/main.c:111: undefined reference to `HAL_delay'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:50: SPI_SLAVE.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-16:07:09 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:99:11: warning: unused variable 'test_CS' [-Wunused-variable]
-   uint8_t test_CS;
-           ^~~~~~~
-../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
-   uint8_t spiRecBuf[10];
-           ^~~~~~~~~
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_SLAVE.elf
- 
-arm-none-eabi-size   SPI_SLAVE.elf 
-arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
-arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-   text	   data	    bss	    dec	    hex	filename
-   5956	     20	   1724	   7700	   1e14	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_SLAVE.bin
- 
-Finished building: SPI_SLAVE.list
- 
-16:08:35 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5972	     20	   1732	   7724	   1e2c	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-16:11:00 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   5972	     20	   1732	   7724	   1e2c	SPI_Master.elf
-Finished building: default.size.stdout
- 
-16:11:26 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8260	     20	   1732	  10012	   271c	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-16:12:53 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8260	     20	   1732	  10012	   271c	SPI_Master.elf
-Finished building: default.size.stdout
- 
-16:14:08 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/spi_drive_master.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive_master.d" -MT"Src/spi_drive_master.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive_master.o"
-In file included from ../Src/spi_drive_master.c:8:0:
-../Src/spi_drive_master.c: In function 'spi_write':
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:52:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.start.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:55:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:58:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataLow.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:61:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:64:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcLow.all);
-  ^~~~~~~~~~~~~~
-../Src/spi_drive_master.c:69:2: warning: implicit declaration of function 'CLEAR_CS'; did you mean 'CLR_CS'? [-Wimplicit-function-declaration]
-  CLEAR_CS();
-  ^~~~~~~~
-  CLR_CS
-../Src/spi_drive_master.c:73:15: warning: comparison between pointer and integer
-  if(spiRecBuf == 0b10011011)
-               ^~
-../Src/spi_drive_master.c:71:6: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  int test;
-      ^~~~
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Src/spi_drive_master.o: In function `spi_write':
-C:/Sasha/STM32/SPI_Master_Slave/SPI_Master/Debug/../Src/spi_drive_master.c:69: undefined reference to `CLEAR_CS'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:50: SPI_Master.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-16:15:01 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/spi_drive_master.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive_master.d" -MT"Src/spi_drive_master.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive_master.o"
-In file included from ../Src/spi_drive_master.c:8:0:
-../Src/spi_drive_master.c: In function 'spi_write':
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:52:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.start.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:55:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:58:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataLow.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:61:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_master.c:64:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcLow.all);
-  ^~~~~~~~~~~~~~
-../Src/spi_drive_master.c:73:15: warning: comparison between pointer and integer
-  if(spiRecBuf == 0b10011011)
-               ^~
-../Src/spi_drive_master.c:71:6: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  int test;
-      ^~~~
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8292	     20	   1732	  10044	   273c	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-16:18:26 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:101:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-   int test;
-       ^~~~
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_SLAVE.elf
- 
-arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
-arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7920	     20	   1724	   9664	   25c0	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_SLAVE.bin
- 
-Finished building: SPI_SLAVE.list
- 
-16:18:36 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7920	     20	   1724	   9664	   25c0	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-16:21:24 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7920	     20	   1724	   9664	   25c0	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-16:23:37 **** Incremental Build of configuration Debug for project SPI_Master ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/spi_drive_master.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive_master.d" -MT"Src/spi_drive_master.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive_master.o"
 In file included from ../Src/spi_drive_master.c:8:0:
 ../Src/spi_drive_master.c: In function 'spi_write':
 ../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
@@ -928,6 +17,7 @@ In file included from ../Src/spi_drive_master.c:8:0:
 ../Src/spi_drive_master.c:52:2: note: in expansion of macro 'SPI_SEND_8_BIT'
   SPI_SEND_8_BIT(msg_write.start.all);
   ^~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
 ../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
  #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 10);
                                                       ^
@@ -940,6 +30,9 @@ In file included from ../Src/spi_drive_master.c:8:0:
 ../Src/spi_drive_master.c:58:2: note: in expansion of macro 'SPI_SEND_8_BIT'
   SPI_SEND_8_BIT(msg_write.dataLow.all);
   ^~~~~~~~~~~~~~
+../Src/main.c:109:18: warning: comparison between pointer and integer
+    if(aRxBuff[0] == "s")
+                  ^~
 ../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
  #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 10);
                                                       ^
@@ -958,120 +51,9 @@ In file included from ../Src/spi_drive_master.c:8:0:
 ../Src/spi_drive_master.c:71:6: warning: variable 'test' set but not used [-Wunused-but-set-variable]
   int test;
       ^~~~
-arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_Master.elf
- 
-arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
-arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
-arm-none-eabi-size   SPI_Master.elf 
-   text	   data	    bss	    dec	    hex	filename
-   8292	     20	   1732	  10044	   273c	SPI_Master.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_Master.bin
- 
-Finished building: SPI_Master.list
- 
-16:24:27 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:101:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-   int test;
-       ^~~~
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_SLAVE.elf
- 
-arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
-arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7924	     20	   1724	   9668	   25c4	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_SLAVE.bin
- 
-Finished building: SPI_SLAVE.list
- 
-16:24:55 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:101:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-   int test;
-       ^~~~
-../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
-   uint8_t spiRecBuf[10];
-           ^~~~~~~~~
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_SLAVE.elf
- 
-arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
-arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-arm-none-eabi-size   SPI_SLAVE.elf 
-   text	   data	    bss	    dec	    hex	filename
-   6028	     20	   1724	   7772	   1e5c	SPI_SLAVE.elf
-Finished building: default.size.stdout
- 
-Finished building: SPI_SLAVE.bin
- 
-Finished building: SPI_SLAVE.list
- 
-16:55:25 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/crc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/crc.d" -MT"Src/crc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/crc.o"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/spi_drive_slave.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive_slave.d" -MT"Src/spi_drive_slave.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive_slave.o"
-arm-none-eabi-gcc "../Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_hal_msp.d" -MT"Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_hal_msp.o"
-arm-none-eabi-gcc "../Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_it.d" -MT"Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_it.o"
-arm-none-eabi-gcc "../Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/system_stm32f1xx.d" -MT"Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/system_stm32f1xx.o"
+../Src/main.c:109:18: warning: comparison with string literal results in unspecified behavior [-Waddress]
 arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
 arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
-../Src/main.c: In function 'main':
-../Src/main.c:101:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-   int test;
-       ^~~~
-../Src/main.c:99:11: warning: unused variable 'test_CS' [-Wunused-variable]
-   uint8_t test_CS;
-           ^~~~~~~
-../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
-   uint8_t spiRecBuf[10];
-           ^~~~~~~~~
-In file included from ../Src/spi_drive_slave.c:8:0:
-../Src/spi_drive_slave.c: In function 'spi_write':
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:39:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.start.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:42:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:45:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.dataLow.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:48:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcHi.all);
-  ^~~~~~~~~~~~~~
-../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
- #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
-                                                      ^
-../Src/spi_drive_slave.c:51:2: note: in expansion of macro 'SPI_SEND_8_BIT'
-  SPI_SEND_8_BIT(msg_write.crcLow.all);
-  ^~~~~~~~~~~~~~
-../Src/spi_drive_slave.c:57:6: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  int test;
-      ^~~~
 arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
 arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
 arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
@@ -1085,53 +67,51 @@ arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c" -mcp
 arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
 arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
 arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_SLAVE.elf
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_Master.elf
  
-arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
-arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-arm-none-eabi-size   SPI_SLAVE.elf 
+arm-none-eabi-size   SPI_Master.elf 
+arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
+arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
    text	   data	    bss	    dec	    hex	filename
-   6180	     20	   1724	   7924	   1ef4	SPI_SLAVE.elf
+   8788	     20	   1732	  10540	   292c	SPI_Master.elf
 Finished building: default.size.stdout
  
-Finished building: SPI_SLAVE.bin
-Finished building: SPI_SLAVE.list
+Finished building: SPI_Master.bin
  
+Finished building: SPI_Master.list
  
-17:03:49 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+14:38:36 **** Incremental Build of configuration Debug for project SPI_Master ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:101:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-   int test;
-       ^~~~
-../Src/main.c:99:11: warning: unused variable 'test_CS' [-Wunused-variable]
-   uint8_t test_CS;
-           ^~~~~~~
-../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
-   uint8_t spiRecBuf[10];
-           ^~~~~~~~~
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI_SLAVE.elf
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_Master.elf
  
-arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
-arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-arm-none-eabi-size   SPI_SLAVE.elf 
+arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
+arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
+arm-none-eabi-size   SPI_Master.elf 
    text	   data	    bss	    dec	    hex	filename
-   6104	     20	   1724	   7848	   1ea8	SPI_SLAVE.elf
+   8776	     20	   1732	  10528	   2920	SPI_Master.elf
 Finished building: default.size.stdout
  
-Finished building: SPI_SLAVE.bin
+Finished building: SPI_Master.bin
  
-Finished building: SPI_SLAVE.list
+Finished building: SPI_Master.list
  
-17:11:12 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+14:38:40 **** Build of configuration Debug for project SPI_SLAVE ****
 make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c8tx.o" "../Startup/startup_stm32f103c8tx.s"
+arm-none-eabi-gcc "../Src/crc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/crc.d" -MT"Src/crc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/crc.o"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/spi_drive_slave.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive_slave.d" -MT"Src/spi_drive_slave.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive_slave.o"
+arm-none-eabi-gcc "../Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_hal_msp.d" -MT"Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f1xx_it.d" -MT"Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/system_stm32f1xx.d" -MT"Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/system_stm32f1xx.o"
 ../Src/main.c: In function 'main':
 ../Src/main.c:118:32: warning: passing argument 2 of 'HAL_SPI_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
-     HAL_SPI_Receive_IT(&hspi1, &spiRecBuf, 1);
+     HAL_SPI_Receive_IT(&hspi1, &spiRecBuf, 3);
                                 ^
 In file included from ../Inc/stm32f1xx_hal_conf.h:329:0,
                  from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
@@ -1146,12 +126,62 @@ In file included from ../Inc/stm32f1xx_hal_conf.h:329:0,
 ../Src/main.c:99:11: warning: unused variable 'test_CS' [-Wunused-variable]
    uint8_t test_CS;
            ^~~~~~~
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+In file included from ../Src/spi_drive_slave.c:8:0:
+../Src/spi_drive_slave.c: In function 'spi_write':
+../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
+                                                      ^
+../Src/spi_drive_slave.c:39:2: note: in expansion of macro 'SPI_SEND_8_BIT'
+  SPI_SEND_8_BIT(msg_write.start.all);
+  ^~~~~~~~~~~~~~
+../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
+                                                      ^
+../Src/spi_drive_slave.c:42:2: note: in expansion of macro 'SPI_SEND_8_BIT'
+  SPI_SEND_8_BIT(msg_write.dataHi.all);
+  ^~~~~~~~~~~~~~
+../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
+                                                      ^
+../Src/spi_drive_slave.c:45:2: note: in expansion of macro 'SPI_SEND_8_BIT'
+  SPI_SEND_8_BIT(msg_write.dataLow.all);
+  ^~~~~~~~~~~~~~
+../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
+                                                      ^
+../Src/spi_drive_slave.c:48:2: note: in expansion of macro 'SPI_SEND_8_BIT'
+  SPI_SEND_8_BIT(msg_write.crcHi.all);
+  ^~~~~~~~~~~~~~
+../Inc/spi_driveslave.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 0);
+                                                      ^
+../Src/spi_drive_slave.c:51:2: note: in expansion of macro 'SPI_SEND_8_BIT'
+  SPI_SEND_8_BIT(msg_write.crcLow.all);
+  ^~~~~~~~~~~~~~
+../Src/spi_drive_slave.c:57:6: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  int test;
+      ^~~~
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
+arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: SPI_SLAVE.elf
  
+arm-none-eabi-size   SPI_SLAVE.elf 
 arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
 arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
-arm-none-eabi-size   SPI_SLAVE.elf 
    text	   data	    bss	    dec	    hex	filename
    8168	     20	   1724	   9912	   26b8	SPI_SLAVE.elf
 Finished building: default.size.stdout
@@ -1160,7 +190,46 @@ Finished building: SPI_SLAVE.bin
  
 Finished building: SPI_SLAVE.list
  
-17:11:50 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+14:45:46 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8776	     20	   1732	  10528	   2920	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+15:09:01 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/spi_drive_master.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/spi_drive_master.d" -MT"Src/spi_drive_master.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/spi_drive_master.o"
+In file included from ../Src/spi_drive_master.c:8:0:
+../Src/spi_drive_master.c: In function 'spi_write':
+../Inc/spi_drive_master.h:19:54: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+ #define SPI_SEND_8_BIT(val) HAL_SPI_Transmit(&hspi1, (uint8_t*)val, 1, 10);
+                                                      ^
+../Src/spi_drive_master.c:81:2: note: in expansion of macro 'SPI_SEND_8_BIT'
+  SPI_SEND_8_BIT(adr_reg);
+  ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_Master.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
+arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7584	     20	   1732	   9336	   2478	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_Master.bin
+ 
+Finished building: SPI_Master.list
+ 
+15:17:48 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-size   SPI_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8168	     20	   1724	   9912	   26b8	SPI_SLAVE.elf
+Finished building: default.size.stdout
+ 
+15:24:35 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
 ../Src/main.c: In function 'main':
@@ -1180,7 +249,7 @@ In file included from ../Inc/stm32f1xx_hal_conf.h:329:0,
 ../Src/main.c:99:11: warning: unused variable 'test_CS' [-Wunused-variable]
    uint8_t test_CS;
            ^~~~~~~
-arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Sasha\STM32\SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: SPI_SLAVE.elf
  
 arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
@@ -1193,4 +262,589 @@ Finished building: default.size.stdout
 Finished building: SPI_SLAVE.bin
  
 Finished building: SPI_SLAVE.list
+ 
+15:25:59 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:118:32: warning: passing argument 2 of 'HAL_SPI_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+     HAL_SPI_Receive_IT(&hspi1, &spiRecBuf, 1);
+                                ^
+In file included from ../Inc/stm32f1xx_hal_conf.h:329:0,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Inc/main.h:31,
+                 from ../Src/main.c:21:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:676:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t (*)[10] {aka unsigned char (*)[10]}'
+ HAL_StatusTypeDef HAL_SPI_Receive_IT(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~
+../Src/main.c:101:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+../Src/main.c:99:11: warning: unused variable 'test_CS' [-Wunused-variable]
+   uint8_t test_CS;
+           ^~~~~~~
+arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_SLAVE.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
+arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
+arm-none-eabi-size   SPI_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8168	     20	   1724	   9912	   26b8	SPI_SLAVE.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_SLAVE.bin
+ 
+Finished building: SPI_SLAVE.list
+ 
+15:27:27 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:103:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+../Src/main.c:99:11: warning: unused variable 'test_CS' [-Wunused-variable]
+   uint8_t test_CS;
+           ^~~~~~~
+../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
+   uint8_t spiRecBuf[10];
+           ^~~~~~~~~
+arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_SLAVE.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
+arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
+arm-none-eabi-size   SPI_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8000	     20	   1724	   9744	   2610	SPI_SLAVE.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_SLAVE.bin
+ 
+Finished building: SPI_SLAVE.list
+ 
+15:28:34 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:103:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+../Src/main.c:99:11: warning: unused variable 'test_CS' [-Wunused-variable]
+   uint8_t test_CS;
+           ^~~~~~~
+../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
+   uint8_t spiRecBuf[10];
+           ^~~~~~~~~
+arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_SLAVE.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
+arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
+arm-none-eabi-size   SPI_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8004	     20	   1724	   9748	   2614	SPI_SLAVE.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_SLAVE.bin
+ 
+Finished building: SPI_SLAVE.list
+ 
+15:30:21 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7584	     20	   1732	   9336	   2478	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+15:43:49 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-size   SPI_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8004	     20	   1724	   9748	   2614	SPI_SLAVE.elf
+Finished building: default.size.stdout
+ 
+16:16:53 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:115:31: error: 'SPI_CS_GPIO_Port' undeclared (first use in this function); did you mean 'CS_GPIO_Port'?
+    test_CS = HAL_GPIO_ReadPin(SPI_CS_GPIO_Port, SPI_CS_Pin);
+                               ^~~~~~~~~~~~~~~~
+                               CS_GPIO_Port
+../Src/main.c:115:31: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:115:49: error: 'SPI_CS_Pin' undeclared (first use in this function); did you mean 'CS_Pin'?
+    test_CS = HAL_GPIO_ReadPin(SPI_CS_GPIO_Port, SPI_CS_Pin);
+                                                 ^~~~~~~~~~
+                                                 CS_Pin
+../Src/main.c:103:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
+   uint8_t spiRecBuf[10];
+           ^~~~~~~~~
+make: *** [Src/subdir.mk:41: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:18:03 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:103:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
+   uint8_t spiRecBuf[10];
+           ^~~~~~~~~
+arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_SLAVE.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
+arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
+arm-none-eabi-size   SPI_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8060	     20	   1724	   9804	   264c	SPI_SLAVE.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_SLAVE.bin
+ 
+Finished building: SPI_SLAVE.list
+ 
+16:32:42 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:119:4: warning: implicit declaration of function 'SET_CS'; did you mean 'SET_BIT'? [-Wimplicit-function-declaration]
+    SET_CS();
+    ^~~~~~
+    SET_BIT
+../Src/main.c:123:4: warning: implicit declaration of function 'CLR_CS'; did you mean 'CRC'? [-Wimplicit-function-declaration]
+    CLR_CS();
+    ^~~~~~
+    CRC
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_Master.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
+arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7500	     20	   1732	   9252	   2424	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_Master.bin
+ 
+Finished building: SPI_Master.list
+ 
+16:33:36 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:103:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
+   uint8_t spiRecBuf[10];
+           ^~~~~~~~~
+arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_SLAVE.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
+arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
+arm-none-eabi-size   SPI_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8060	     20	   1724	   9804	   264c	SPI_SLAVE.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_SLAVE.bin
+ 
+Finished building: SPI_SLAVE.list
+ 
+16:49:40 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:103:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
+   uint8_t spiRecBuf[10];
+           ^~~~~~~~~
+arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_SLAVE.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
+arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
+arm-none-eabi-size   SPI_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8228	     20	   1724	   9972	   26f4	SPI_SLAVE.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_SLAVE.bin
+ 
+Finished building: SPI_SLAVE.list
+ 
+16:51:02 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:103:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+../Src/main.c:99:11: warning: variable 'test_CS' set but not used [-Wunused-but-set-variable]
+   uint8_t test_CS;
+           ^~~~~~~
+../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
+   uint8_t spiRecBuf[10];
+           ^~~~~~~~~
+arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_SLAVE.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
+arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
+arm-none-eabi-size   SPI_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8060	     20	   1724	   9804	   264c	SPI_SLAVE.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_SLAVE.bin
+ 
+Finished building: SPI_SLAVE.list
+ 
+16:51:32 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:103:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+../Src/main.c:99:11: warning: variable 'test_CS' set but not used [-Wunused-but-set-variable]
+   uint8_t test_CS;
+           ^~~~~~~
+../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
+   uint8_t spiRecBuf[10];
+           ^~~~~~~~~
+arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_SLAVE.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
+arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
+arm-none-eabi-size   SPI_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8068	     20	   1724	   9812	   2654	SPI_SLAVE.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_SLAVE.bin
+ 
+Finished building: SPI_SLAVE.list
+ 
+17:09:06 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:103:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+../Src/main.c:99:11: warning: unused variable 'test_CS' [-Wunused-variable]
+   uint8_t test_CS;
+           ^~~~~~~
+../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
+   uint8_t spiRecBuf[10];
+           ^~~~~~~~~
+arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_SLAVE.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
+arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
+arm-none-eabi-size   SPI_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8656	     20	   1724	  10400	   28a0	SPI_SLAVE.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_SLAVE.bin
+ 
+Finished building: SPI_SLAVE.list
+ 
+17:15:04 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:121:4: warning: implicit declaration of function 'SET_CS'; did you mean 'SET_BIT'? [-Wimplicit-function-declaration]
+    SET_CS();
+    ^~~~~~
+    SET_BIT
+../Src/main.c:127:4: warning: implicit declaration of function 'CLR_CS'; did you mean 'CRC'? [-Wimplicit-function-declaration]
+    CLR_CS();
+    ^~~~~~
+    CRC
+../Src/main.c:101:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_Master.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
+arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8352	     20	   1732	  10104	   2778	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_Master.bin
+ 
+Finished building: SPI_Master.list
+ 
+17:16:31 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:122:4: warning: implicit declaration of function 'SET_CS'; did you mean 'SET_BIT'? [-Wimplicit-function-declaration]
+    SET_CS();
+    ^~~~~~
+    SET_BIT
+../Src/main.c:128:4: warning: implicit declaration of function 'CLR_CS'; did you mean 'CRC'? [-Wimplicit-function-declaration]
+    CLR_CS();
+    ^~~~~~
+    CRC
+../Src/main.c:102:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_Master.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
+arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8360	     20	   1732	  10112	   2780	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_Master.bin
+ 
+Finished building: SPI_Master.list
+ 
+17:18:01 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:122:4: warning: implicit declaration of function 'SET_CS'; did you mean 'SET_BIT'? [-Wimplicit-function-declaration]
+    SET_CS();
+    ^~~~~~
+    SET_BIT
+../Src/main.c:128:4: warning: implicit declaration of function 'CLR_CS'; did you mean 'CRC'? [-Wimplicit-function-declaration]
+    CLR_CS();
+    ^~~~~~
+    CRC
+../Src/main.c:102:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_Master.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
+arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8360	     20	   1732	  10112	   2780	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_Master.bin
+ 
+Finished building: SPI_Master.list
+ 
+17:18:44 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:122:4: warning: implicit declaration of function 'SET_CS'; did you mean 'SET_BIT'? [-Wimplicit-function-declaration]
+    SET_CS();
+    ^~~~~~
+    SET_BIT
+../Src/main.c:128:4: warning: implicit declaration of function 'CLR_CS'; did you mean 'CRC'? [-Wimplicit-function-declaration]
+    CLR_CS();
+    ^~~~~~
+    CRC
+../Src/main.c:102:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_Master.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
+arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8360	     20	   1732	  10112	   2780	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_Master.bin
+ 
+Finished building: SPI_Master.list
+ 
+17:19:43 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:122:4: warning: implicit declaration of function 'SET_CS'; did you mean 'SET_BIT'? [-Wimplicit-function-declaration]
+    SET_CS();
+    ^~~~~~
+    SET_BIT
+../Src/main.c:126:36: warning: passing argument 2 of 'HAL_SPI_TransmitReceive' makes pointer from integer without a cast [-Wint-conversion]
+    HAL_SPI_TransmitReceive(&hspi1, (uint8_t)1, aRxBuff, 1, 30);
+                                    ^
+In file included from ../Inc/stm32f1xx_hal_conf.h:329:0,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Inc/main.h:31,
+                 from ../Src/main.c:21:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:673:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'unsigned char'
+ HAL_StatusTypeDef HAL_SPI_TransmitReceive(SPI_HandleTypeDef *hspi, uint8_t *pTxData, uint8_t *pRxData, uint16_t Size,
+                   ^~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:128:4: warning: implicit declaration of function 'CLR_CS'; did you mean 'CRC'? [-Wimplicit-function-declaration]
+    CLR_CS();
+    ^~~~~~
+    CRC
+../Src/main.c:102:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_Master.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
+arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8360	     20	   1732	  10112	   2780	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_Master.bin
+ 
+Finished building: SPI_Master.list
+ 
+17:20:50 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:122:4: warning: implicit declaration of function 'SET_CS'; did you mean 'SET_BIT'? [-Wimplicit-function-declaration]
+    SET_CS();
+    ^~~~~~
+    SET_BIT
+../Src/main.c:128:4: warning: implicit declaration of function 'CLR_CS'; did you mean 'CRC'? [-Wimplicit-function-declaration]
+    CLR_CS();
+    ^~~~~~
+    CRC
+../Src/main.c:102:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_Master.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
+arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8360	     20	   1732	  10112	   2780	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_Master.bin
+ 
+Finished building: SPI_Master.list
+ 
+17:21:28 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:122:4: warning: implicit declaration of function 'SET_CS'; did you mean 'SET_BIT'? [-Wimplicit-function-declaration]
+    SET_CS();
+    ^~~~~~
+    SET_BIT
+../Src/main.c:128:4: warning: implicit declaration of function 'CLR_CS'; did you mean 'CRC'? [-Wimplicit-function-declaration]
+    CLR_CS();
+    ^~~~~~
+    CRC
+../Src/main.c:102:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_Master.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
+arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8360	     20	   1732	  10112	   2780	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_Master.bin
+ 
+Finished building: SPI_Master.list
+ 
+17:22:52 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8360	     20	   1732	  10112	   2780	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+17:24:47 **** Incremental Build of configuration Debug for project SPI_SLAVE ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:103:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+../Src/main.c:99:11: warning: unused variable 'test_CS' [-Wunused-variable]
+   uint8_t test_CS;
+           ^~~~~~~
+../Src/main.c:97:11: warning: unused variable 'spiRecBuf' [-Wunused-variable]
+   uint8_t spiRecBuf[10];
+           ^~~~~~~~~
+arm-none-eabi-gcc -o "SPI_SLAVE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_SLAVE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_SLAVE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_SLAVE.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_SLAVE.elf  > "SPI_SLAVE.list"
+arm-none-eabi-objcopy  -O binary  SPI_SLAVE.elf  "SPI_SLAVE.bin"
+arm-none-eabi-size   SPI_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8656	     20	   1724	  10400	   28a0	SPI_SLAVE.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_SLAVE.bin
+ 
+Finished building: SPI_SLAVE.list
+ 
+17:25:36 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8360	     20	   1732	  10112	   2780	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+17:29:51 **** Incremental Build of configuration Debug for project SPI_Master ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:122:4: warning: implicit declaration of function 'SET_CS'; did you mean 'SET_BIT'? [-Wimplicit-function-declaration]
+    SET_CS();
+    ^~~~~~
+    SET_BIT
+../Src/main.c:128:4: warning: implicit declaration of function 'CLR_CS'; did you mean 'CRC'? [-Wimplicit-function-declaration]
+    CLR_CS();
+    ^~~~~~
+    CRC
+../Src/main.c:102:7: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+   int test;
+       ^~~~
+arm-none-eabi-gcc -o "SPI_Master.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\alvas\Documents\Work\STM32_SPI_Master_Slave\SPI_Master\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI_Master.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI_Master.elf
+ 
+arm-none-eabi-objdump -h -S  SPI_Master.elf  > "SPI_Master.list"
+arm-none-eabi-objcopy  -O binary  SPI_Master.elf  "SPI_Master.bin"
+arm-none-eabi-size   SPI_Master.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8360	     20	   1732	  10112	   2780	SPI_Master.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI_Master.bin
+ 
+Finished building: SPI_Master.list
  

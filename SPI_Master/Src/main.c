@@ -94,6 +94,12 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
+  uint8_t aRxBuff[1];
+  aRxBuff[0] = 0;
+  uint8_t aTxBuff[1];
+  aTxBuff[0] = 'v';
+
+  int test;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -101,11 +107,33 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_Delay(1000);
-	  spi_write(11, 1523);
-	  HAL_GPIO_TogglePin(led_GPIO_Port, led_Pin);
-	  HAL_Delay(500);
+
+
     /* USER CODE BEGIN 3 */
+	  HAL_UART_Receive(&huart1, aRxBuff, 1, 100);
+	  if(aRxBuff[0] == 's')
+	  {
+		  //spi_write(11, 1523);
+
+		  aRxBuff[0] = 0;
+
+		  HAL_GPIO_TogglePin(led_GPIO_Port, led_Pin);
+
+			SET_CS();
+			//SPI_SEND_8_BIT(adr_reg);
+			HAL_SPI_Transmit(&hspi1, aTxBuff, 1, 30);
+
+			HAL_SPI_TransmitReceive(&hspi1, (uint8_t*)1, aRxBuff, 1, 200);
+
+			CLR_CS();
+
+			test = 10;
+	  }
+
+	  HAL_Delay(1000);
+
+
+	  //HAL_Delay(500);
   }
   /* USER CODE END 3 */
 }

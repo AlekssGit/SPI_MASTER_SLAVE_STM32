@@ -98,6 +98,8 @@ int main(void)
 
   uint8_t test_CS;
 
+  uint8_t dataSPI[1];
+
   int test;
 
   flag = 0;
@@ -110,13 +112,22 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-//	  test_CS = HAL_GPIO_ReadPin(SPI_CS_GPIO_Port, SPI_CS_Pin);
+//	  test_CS = HAL_GPIO_ReadPin(CS_GPIO_Port, CS_Pin);
 	  if(flag == 1)
 	  {
 		  flag = 0;
 		  HAL_GPIO_TogglePin(led_GPIO_Port, led_Pin);
-		  HAL_SPI_Receive_IT(&hspi1, &spiRecBuf, 3);
+		  HAL_SPI_Receive(&hspi1, dataSPI, 1, 50);
 		  test = 9;
+
+		  if(dataSPI[0] == 'v')
+		  {
+			  dataSPI[0] = 'k';
+			  HAL_SPI_Transmit(&hspi1, dataSPI, 1, 100);
+		  }
+
+		  dataSPI[0] = 0;
+
 	  }
 
 //	  HAL_Delay(500);
